@@ -1,0 +1,14 @@
+{
+  "name": "income_track_app",
+  "version": "1.0.0",
+  "description": "this app for nail technician or other services work track thier tips and income",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TienPhamDev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
