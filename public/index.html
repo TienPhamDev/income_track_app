@@ -15,15 +15,21 @@
     <label for="tipCash">Tip Cash</label>
     <input type="text" name="tipCash" class="tipCash">
     <label for="workDate">Work Date</label>
-    <input type="date" name="workDate" class="workDate">
+    <input type="date" name="workDate" class="workDate" value="">
     <button type="submit" class="submitBtn">Submit</button>
   </form>
   <script>
     const submitBtn = document.querySelector(".submitBtn")
     submitBtn.addEventListener("click",async (e)=>{
-      const
+      const amount = document.querySelector(".amount").value
+      const tipCard = document.querySelector(".tipCard").value
+      const tipCash = document.querySelector(".tipCash").value
+      const workDate = document.querySelector(".workDate").value
       const data ={
-        amount : 
+        amount : amount,
+        tipCard : tipCard,
+        tipCash : tipCash,
+        workDate : workDate
       }
       const options ={
         method : "POST",
@@ -33,6 +39,7 @@
         body: JSON.stringify(data)
       }
       const res = await fetch("/api",options)
+      const json = await res.json()
     })
   </script>
 </body>
