@@ -15,11 +15,14 @@
     <label for="tipCash">Tip Cash</label>
     <input type="text" id="tipCash" name="tipCash" class="tipCash">
     <label for="workDate">Work Date</label>
-    <input type="date" id="workDate" name="workDate" class="workDate" value="">
+    <input type="date" id="workDate" name="workDate" class="workDate" >
     <button type="submit" class="submitBtn">Submit</button>
   </form>
   <script>
+
     const submitBtn = document.querySelector(".submitBtn")
+    const workDate = document.querySelector(".workDate")
+    workDate.valueAsDate = new Date()
     submitBtn.addEventListener("click",async (e)=>{
       const amount = document.querySelector(".amount").value
       const tipCard = document.querySelector(".tipCard").value
