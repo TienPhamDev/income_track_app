@@ -9,6 +9,7 @@
   "author": "TienPhamDev",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "node": "^22.0.0"
   }
 }
