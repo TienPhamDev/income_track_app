@@ -20,15 +20,26 @@
   </form>
   <hr>
   <div class="showData"></div>
-  <script src="postData.js">
-  </script>
+  <script src="postData.js"></script>
+  <script src="showCurrentDate.js"></script>
   <script>
     getData()
     async function getData(){
+      const showDataEl = document.querySelector(".showData")
       const res = await fetch("/api")
       const data = await res.json()
 
-      console.log(data)
+      let showData = data.map(element => {
+        const {amount,tipCard,tipCash,workDate} = element
+        let display = `
+                      <p>Amount : ${amount}</p>
+                      <p>Tip card : ${tipCard}</p>
+                      <p>Tip cash : ${tipCash}</p>
+                      <p>Work date : ${workDate}</p>
+                      <hr>`
+        return display
+      }).join("")
+      showDataEl.innerHTML = showData
 
     }
   </script>

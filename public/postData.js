@@ -1,8 +1,5 @@
 const submitBtn = document.querySelector(".submitBtn")
-const workDate = document.querySelector(".workDate")
-workDate.valueAsDate = new Date()
-submitBtn.addEventListener("click", async (e) => {
-
+async function postDate() {
   const amountEl = document.querySelector(".amount")
   const tipCardEl = document.querySelector(".tipCard")
   const tipCashEl = document.querySelector(".tipCash")
@@ -25,4 +22,6 @@ submitBtn.addEventListener("click", async (e) => {
   }
   const res = await fetch("/api",options)
 
-})
+}
+
+submitBtn.addEventListener("click", postDate)
