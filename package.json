@@ -9,8 +9,15 @@
   "author": "TienPhamDev",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^10.4.19",
     "express": "^4.19.2",
     "nedb": "^1.8.0",
-    "node": "^22.0.0"
-  }
+    "node": "^22.0.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "tailwind:css": "postcss public/src/input.css -o public/src/output.css"
 }
