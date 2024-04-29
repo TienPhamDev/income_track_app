@@ -4,7 +4,6 @@
   "description": "this app for nail technician or other services work track thier tips and income",
   "main": "index.js",
   "scripts": {
-    "tailwind:css": "postcss public/src/input.css -o public/src/output.css"
   },
   "author": "TienPhamDev",
   "license": "ISC",
