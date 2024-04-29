@@ -32,10 +32,10 @@
       let showData = data.map(element => {
         const {amount,tipCard,tipCash,workDate} = element
         let display = `
+                      <p>Work date : ${workDate}</p>
                       <p>Amount : ${amount}</p>
                       <p>Tip card : ${tipCard}</p>
                       <p>Tip cash : ${tipCash}</p>
-                      <p>Work date : ${workDate}</p>
                       <hr>`
         return display
       }).join("")
