@@ -11,11 +11,15 @@ dataBase.loadDatabase()
 app.use(express.static("public"))
 app.use(express.json({limit :"1mb"}))
 
+app.get("/api", (request, response) => {
+  dataBase.find({}, (err, data) => {
+    response.json(data)
+  })
+})
+
 app.post("/api", (request, response) => {
   console.log(request.body)
   const data = request.body
   dataBase.insert(data)
-  response.json({
-    status:"success"
-  })
+  
 })

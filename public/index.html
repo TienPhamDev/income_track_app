@@ -18,33 +18,30 @@
     <input type="date" id="workDate" name="workDate" class="workDate" >
     <button type="submit" class="submitBtn">Submit</button>
   </form>
+  <hr>
+  <div class="showData"></div>
+  <script src="postData.js"></script>
+  <script src="showCurrentDate.js"></script>
   <script>
+    getData()
+    async function getData(){
+      const showDataEl = document.querySelector(".showData")
+      const res = await fetch("/api")
+      const data = await res.json()
 
-    const submitBtn = document.querySelector(".submitBtn")
-    const workDate = document.querySelector(".workDate")
-    workDate.valueAsDate = new Date()
-    submitBtn.addEventListener("click",async (e)=>{
-      const amount = document.querySelector(".amount").value
-      const tipCard = document.querySelector(".tipCard").value
-      const tipCash = document.querySelector(".tipCash").value
-      const workDate = document.querySelector(".workDate").value
-      const data ={
-        amount : amount,
-        tipCard : tipCard,
-        tipCash : tipCash,
-        workDate : workDate
-      }
-      const options ={
-        method : "POST",
-        headers : {
-            "Content-Type":"application/json"
-        },
-        body: JSON.stringify(data)
-      }
-      const res = await fetch("/api",options)
-      const json = await res.json()
-      console.log(json)
-    })
+      let showData = data.map(element => {
+        const {amount,tipCard,tipCash,workDate} = element
+        let display = `
+                      <p>Work date : ${workDate}</p>
+                      <p>Amount : ${amount}</p>
+                      <p>Tip card : ${tipCard}</p>
+                      <p>Tip cash : ${tipCash}</p>
+                      <hr>`
+        return display
+      }).join("")
+      showDataEl.innerHTML = showData
+
+    }
   </script>
 </body>
 </html>
