@@ -15,7 +15,7 @@ app.listen(3000, () => {
 const dataBase = new Datastore("database.db")
 dataBase.loadDatabase()
 
-// app.use(express.static("public"))
+app.use(express.static("public"))
 app.use(express.json({limit :"1mb"}))
 
 
