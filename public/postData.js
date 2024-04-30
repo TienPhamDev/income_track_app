@@ -11,7 +11,7 @@ async function postDate() {
       amount : amount,
       tipCard : tipCard,
       tipCash : tipCash,
-      workDate : workDate.value 
+      workDate : workDateEl.value 
   }
   const options ={
     method : "POST",

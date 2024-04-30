@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "this app for nail technician or other services work track thier tips and income",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "TienPhamDev",
   "license": "ISC",
   "dependencies": {
