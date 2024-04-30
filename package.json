@@ -3,18 +3,21 @@
   "version": "1.0.0",
   "description": "this app for nail technician or other services work track thier tips and income",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon server.js",
+    "build-tail":"NODE_ENV=production tailwindcss build -i styles/tailwind.css -o assets/output.css"
+  },
   "author": "TienPhamDev",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^10.4.19",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "nedb": "^1.8.0",
-    "node": "^22.0.0",
-    "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.0"
+    "nedb": "^1.8.0"
   },
   "devDependencies": {
+    "nodemon": "^3.1.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
   }
 }
